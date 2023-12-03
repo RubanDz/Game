@@ -10,10 +10,11 @@
       }
 
       body {
-        width: 50%;
-        max-width: 800px;
-        min-width: 480px;
+        width: 100vw;
+      
+        min-width: 60vh;
         margin: 0 auto;
+        border: 2px solid red;
       }
       
       .form input[type="number"] {
@@ -24,16 +25,8 @@
         color: white;
         padding: 3px;
       }
-      @media (max-width: 680px) {
-         body {
-           
-            font-size: 0.58rem;
-            background-color: black;
-            color: white;
-           
-          
-         }
-      }
+    
+    
     </style>
 
 </head>
@@ -86,6 +79,7 @@
 
       var guessCount = 1;
       var resetButton;
+      guessField.focus();
 
       function checkGuess() {
          var userGuess = Number(guessField.value);
@@ -94,7 +88,7 @@
          }
          guesses.textContent += userGuess + "";
          if (userGuess === randomNumber) {
-            lastResult.textContent = "Поздравляем! Вы поняли это правильно!";
+            lastResult.textContent = "Поздравляю! Вы угадали!";
             lastResult.style.backgroundColor = "green";
             lowOrHi.textContent = "";
             setGameOver();
